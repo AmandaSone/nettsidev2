@@ -1,0 +1,233 @@
+/* ===========================
+   HEADER OG NAVIGASJON
+   =========================== */
+
+/* Flexbox for headeren */
+.header-flex {                           /* Flex container for header */
+  display: flex;                        /* Aktiverer flexbox */
+  align-items: center;                  /* Vertikal sentrering av innhold */
+  justify-content: space-between;       /* Plasserer elementer med plass mellom */
+  padding: 1rem 2rem;                   /* Indre marg rundt header */
+  background: #364529;                  /* Bakgrunnsfarge på header */
+}
+
+/* Tittel i headeren */
+.header-flex h1 {                       
+  margin: 10px;                            /* Fjerner standard marg */
+  font-size: 2em;                       /* Størrelse på tittel */
+}
+
+/* Navigasjonsmeny-knapper */
+.header-buttons {                       
+  display: flex;                        /* Flexbox for knapper */
+  gap: 1rem;                            /* Avstand mellom knapper */
+  list-style: none;                     /* Fjerner punktmerking */
+  margin: 0;                            /* Fjerner marg */
+  padding: 0;                           /* Fjerner padding */
+}
+
+/* Stil for knapp-lenker */
+.button-link {                          
+  background: #60794C;                  /* Bakgrunnsfarge på knapp */
+  color: #ffffff;                       /* Tekstfarge */
+  padding: 0.8em 1.5em;                 /* Indre marg på knapp */
+  border-radius: 4px;                   /* Runde hjørner */
+  text-decoration: none;                /* Fjerner understrek */
+  transition: background 0.2s;          /* Animasjon ved hover */
+}
+.button-link:hover {                    
+  background: #84a06d;                  /* Lysere bakgrunn ved hover */
+}
+
+/* Navigasjonsmeny layout */
+nav ul {                                
+  list-style: none;                     /* Fjerner punkter fra liste */
+  padding: 0;                           /* Fjerner padding */
+  display: flex;                        /* Flexbox for meny */
+  justify-content: center;              /* Sentrerer menyen */
+  gap: 20px;                            /* Avstand mellom elementer */
+}
+
+/* Navigasjonslenker */
+nav a {                                
+  color: white;                         /* Hvit tekst på lenker */
+  text-decoration: none;                /* Fjerner understrek */
+}
+
+/* ===========================
+   BODY OG GRUNNLEGGENDE STIL
+   =========================== */
+
+body {
+  font-family: sans-serif;              /* Skrifttype for hele siden */
+  margin: 0;                            /* Fjerner standard marg */
+  background: linear-gradient(to bottom, #FCE6D4, #ECB88B); /* Gradient fra topp til bunn */
+  font-size: 14px;                      /* Standard tekststørrelse */
+  text-align: center;                /* justerer all tekst til midten */
+  min-height: 100vh;                    /* Sikrer at gradienten dekker hele høyden */
+}
+
+/* ===========================
+   GRID OG WRAPPER
+   =========================== */
+
+/* Wrapper for grid-containere */
+.wrapper {                              
+  display: flex;                        /* Plasserer grid-containere side ved side */
+  justify-content: center;              /* Sentrerer innholdet horisontalt */
+  margin: 20px auto;                         /* Topp og bunn marg */
+}
+
+/* Grid-container for innhold */
+.grid-container {                       
+  flex: 1;                              /* Lar grid-container vokse likt i wrapper */
+  display: grid;                        /* Aktiverer CSS grid */
+  grid-template-columns: 1fr;       /* En kolonne som tar opp all tilgjengelig plass */
+  gap: 20px;                            /* Avstand mellom kolonner */
+  padding: 15px;                        /* Indre marg for tekst */
+  max-width: 1000px;                     /* Maks bredde på hver grid-container */
+  background-color: #976345;            /* Bakgrunnsfarge på grid */
+  text-align: center;                     /* Venstrejustert tekst */
+  border-radius: 8px;                   /* Runde hjørner */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Skyggeeffekt */
+  margin: 40px;                         /* Ytre marg */
+}
+
+/* Mindre størelse grid-container for sidebar */
+.sidebar-grid-container {                
+  flex: 1;                            /* Smalere sidebar */
+  display: grid;                        /* Aktiverer CSS grid */
+  grid-template-columns: 1fr;      /* En kolonne som tar opp all tilgjengelig plass */
+  gap: 20px;                            /* Avstand mellom kolonner */
+  padding: 15px;                        /* Indre marg for tekst */
+  max-width: 400px;                     /* Maks bredde på sidebar */
+  background-color: #976345;            /* Bakgrunnsfarge på grid */
+  text-align: center;                     /* Venstrejustert tekst */
+  border-radius: 8px;                   /* Runde hjørner */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Skyggeeffekt */
+  margin: 40px;                         /* Ytre marg */
+}
+
+/* ===========================
+   INNHOLD OG SIDEBAR
+   =========================== */
+
+.main-content, .sidebar {               
+  background-color: #ce9473;            /* Bakgrunnsfarge */
+  border-radius: 6px;                   /* Runde hjørner */
+  text-align: left;                /* Sentrerer teksten */
+  padding: 15px;                        /* Indre marg for tekst */
+}
+
+.intro-text {
+  background-color: #ce9473;            /* Bakgrunnsfarge */
+  padding:5px;                        /* Indre marg for tekst */  
+  border-radius: 6px;                   /* Runde hjørner */
+  text-align: center;                  /* Sentrerer teksten */
+  font-size: 1.2em;                     /* Større tekst for introduksjon */
+  color:#f7f3ef;                  /* Hvit tekstfarge */
+}
+
+/* ===========================
+   HEADER OG FOOTER
+   =========================== */
+
+header, footer {
+  text-align: justify;                  /* Justerer tekst */
+  padding: 10px;                         /* Indre marg */
+  background-color: #364529;            /* Bakgrunnsfarge */
+  color: white;                         /* Tekstfarge */
+}
+
+/* ===========================
+   RESPONSIVT DESIGN
+   =========================== */
+
+/* For små og mellomstore skjermer */
+@media screen and (max-width: 900px) {      
+  h1 {
+    font-size: 1.5em;                   /* Mindre tittel på små/mellomstore skjermer */
+  }
+  .wrapper {
+    flex-direction: column;             /* Legg grid-containerne under hverandre */
+    gap: 20px;                          /* Mindre avstand mellom */
+    align-items: center;                /* Sentrer innholdet */
+  }
+  .grid-container {
+    max-width: 100%;                    /* Full bredde på små/mellomstore skjermer */
+    width: 95%;                         /* Container bredde på små/mellomstore skjermer */
+  }
+  .sidebar-grid-container {
+    max-width: 100%;                    /* Full bredde på sidebar på små/mellomstore skjermer */
+    width: 95%;                         /* Container bredde på sidebar på små/mellomstore skjermer */
+  }
+}
+
+/* For store skjermer */
+@media screen and (min-width: 1200px) { 
+  .grid-container {
+    max-width: 1100px;                      /* Container bredde på store skjermer */
+  }
+  .sidebar-grid-container {
+    max-width: 400px;                      /* Container bredde på sidebar på store skjermer */
+  }
+  h1 {
+    font-size: 3em;                     /* Større tittel på store skjermer */
+  }
+}
+
+/* ===========================
+   GALLERI BUTTON STIL
+   =========================== */
+
+
+/* Stil for hvert galleri-element */
+.gallery-item {                         /* Enkelt bilde/element i galleriet */
+  margin: 0px;                          /* Avstand rundt elementet */
+  width: fit-content;                         /* Fast bredde på elementet */
+  transition: color 0.2s; 
+}
+
+.gallery-item:hover {                   /* Hover-effekt på galleri-element */
+  color: #ffffff;                    /* Endrer tekstfarge ved hover */
+}
+
+/* Stil for bilde i galleri-element */
+.gallery-item img {                     
+  width: 100%;                          /* Bildet fyller hele bredden */
+  height: auto;                         /* Beholder proporsjoner */
+}
+
+/* Stil for beskrivelse under bilde */
+.gallery-item .desc {                   
+  padding: 15px;                        /* Indre marg rundt tekst */
+  text-align: center;                   /* Sentrerer teksten */
+}
+
+/* ===========================
+   IMAGE STIL
+   =========================== */
+
+/* Stil for hvert galleri-element */
+.image-item {                         /* Enkelt bilde/element i galleriet */
+  margin: 0px;                          /* Avstand rundt elementet */
+  width: fit-content;                         /* Fast bredde på elementet */
+  transition: color 0.2s; 
+}
+
+/* Stil for bilde i galleri-element */
+.image-item img {                     
+  width: 100%;                          /* Bildet fyller hele bredden */
+  height: auto;                         /* Beholder proporsjoner */
+}
+
+/* Stil for beskrivelse under bilde */
+.image-item .desc {                   
+  padding: 5px;                        /* Indre marg rundt tekst */
+  text-align: center;                   /* Sentrerer teksten */
+}
+
+.image-item .desc h3 {
+  padding: 5px;                        /* Indre marg rundt tekst */
+  text-align: center;                   /* Sentrerer teksten */
+}

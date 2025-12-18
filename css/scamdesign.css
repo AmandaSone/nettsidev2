@@ -1,0 +1,162 @@
+/* ===========================
+   HEADER OG NAVIGASJON
+   =========================== */
+
+
+.header-flex {                           /* Flex container for header */
+  display: flex;                        /* Aktiverer flexbox */
+  align-items: center;                  /* Vertikal sentrering av innhold */
+  justify-content: space-between;       /* Plasserer elementer med plass mellom */
+  padding: 1rem 2rem;                   /* Indre marg rundt header */
+  background: #9db2c5;                  /* Bakgrunnsfarge på header */
+}
+
+/* Tittel i headeren */
+.header-flex h1 {                       
+  margin: 10px;                            /* Fjerner standard marg */
+  font-size: 2em;                       /* Størrelse på tittel */
+}
+
+/* Navigasjonsmeny-knapper */
+.header-buttons {                       
+  display: flex;                        /* Flexbox for knapper */
+  gap: 1rem;                            /* Avstand mellom knapper */
+  list-style: none;                     /* Fjerner punktmerking */
+  margin: 0;                            /* Fjerner marg */
+  padding: 0;                           /* Fjerner padding */
+}
+
+/* Stil for knapp-lenker */
+.button-link {                          
+  background: #4b6374;                  /* Bakgrunnsfarge på knapp */
+  color: #ffffff;                       /* Tekstfarge */
+  padding: 0.8em 1.5em;                 /* Indre marg på knapp */
+  border-radius: 4px;                   /* Runde hjørner */
+  text-decoration: none;                /* Fjerner understrek */
+  transition: background 0.2s;          /* Animasjon ved hover */
+}
+.button-link:hover {                    
+  background: #1d2b38;                  /* Lysere bakgrunn ved hover */
+}
+
+/* Navigasjonsmeny layout */
+nav ul {                                
+  list-style: none;                     /* Fjerner punkter fra liste */
+  padding: 0;                           /* Fjerner padding */
+  display: flex;                        /* Flexbox for meny */
+  justify-content: center;              /* Sentrerer menyen */
+  gap: 20px;                            /* Avstand mellom elementer */
+}
+
+/* Navigasjonslenker */
+nav a {                                
+  color: white;                         /* Hvit tekst på lenker */
+  text-decoration: none;                /* Fjerner understrek */
+}
+
+/* ===========================
+   BODY OG GRUNNLEGGENDE STIL
+   =========================== */
+
+
+body {
+  font-family: sans-serif;              /* Skrifttype for hele siden */
+  margin: 0;                            /* Fjerner standard marg */
+  background: linear-gradient(to bottom, #faf8f6, #e1d5cc); /* Gradient fra topp til bunn */
+  font-size: 14px;                      /* Standard tekststørrelse */
+  text-align: center;                /* justerer all tekst til midten */
+  min-height: 100vh;                    /* Sikrer at gradienten dekker hele høyden */
+}
+
+/* ===========================
+   GRID OG WRAPPER
+   =========================== */
+
+
+/* Wrapper for grid-containere */
+.wrapper {                              
+  display: flex;                        /* Plasserer grid-containere side ved side */
+  justify-content: center;              /* Sentrerer innholdet horisontalt */
+  margin: 20px auto;                         /* Topp og bunn marg */
+}
+
+/* Grid-container for innhold */
+.grid-container {                       
+  flex: 1;                              /* Lar grid-container vokse likt i wrapper */
+  display: grid;                        /* Aktiverer CSS grid */
+  grid-template-columns: 1fr;       /* En kolonne som tar opp all tilgjengelig plass */
+  gap: 20px;                            /* Avstand mellom kolonner */
+  padding: 15px;                        /* Indre marg for tekst */
+  max-width: 1000px;                     /* Maks bredde på hver grid-container */
+  background-color: #4b6374;            /* Bakgrunnsfarge på grid */
+  text-align: center;                     /* Venstrejustert tekst */
+  border-radius: 8px;                   /* Runde hjørner */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Skyggeeffekt */
+  margin: 40px;                         /* Ytre marg */
+}
+
+/* Mindre størelse grid-container for sidebar */
+.sidebar-grid-container {                
+  flex: 1;                            /* Smalere sidebar */
+  display: grid;                        /* Aktiverer CSS grid */
+  grid-template-columns: 1fr;      /* En kolonne som tar opp all tilgjengelig plass */
+  gap: 20px;                            /* Avstand mellom kolonner */
+  padding: 15px;                        /* Indre marg for tekst */
+  max-width: 400px;                     /* Maks bredde på sidebar */
+  background-color: #4b6374;            /* Bakgrunnsfarge på grid */
+  text-align: center;                     /* Venstrejustert tekst */
+  border-radius: 8px;                   /* Runde hjørner */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Skyggeeffekt */
+  margin: 40px;                         /* Ytre marg */
+}
+
+/* ===========================
+   INNHOLD OG SIDEBAR
+   =========================== */
+
+
+.main-content, .sidebar {               
+  background-color: #9db2c5;            /* Bakgrunnsfarge */
+  border-radius: 6px;                   /* Runde hjørner */
+  text-align: left;                /* Sentrerer teksten */
+  padding: 15px;                        /* Indre marg for tekst */
+}
+
+.intro-text {
+  background-color: #9db2c5;            /* Bakgrunnsfarge */
+  padding:5px;                        /* Indre marg for tekst */  
+  border-radius: 6px;                   /* Runde hjørner */
+  text-align: center;                  /* Sentrerer teksten */
+  font-size: 1.2em;                     /* Større tekst for introduksjon */
+  color:#f7f3ef;                  /* Hvit tekstfarge */
+}
+
+/* ===========================
+   ANIMASJONER
+   =========================== */
+
+#boks {
+    height: 50px;
+    width: 50px;
+    background-color: blue;
+    position: relative;
+    animation-name: frem-og-tilbake;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes frem-og-tilbake {
+    0% {
+        left: 0px;
+    }
+    50% {
+        background-color: rgb(162, 32, 179);
+        
+    }
+    100% {
+        left: 1500px;
+        background-color: red;
+        
+    }
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html> <!--manglet >-->
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enkel HTML-side med JavaScript</title> <!---Manglet <title>-->
+
+    <style>
+   /* Enkel styling for å gjøre siden penere */       /*måtte slutte komentar med stjerne og slash*/
+
+        body { 
+            font-family: Arial, sans-seriff;  /*manglet ; */
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        .result {
+            font-weight: bold;
+            color: #007BFF;
+        }
+    </style>    <!--manglet style end tag </style>-->
+</head>
+
+<body>
+<h1>Velkommen til min enkle nettside!</h1>   <!---Manglet <h1>> >-->
+<p id="variable">Variabel: </p>
+<p id="calculation">Utregning: </p>
+<p id="promptResult">Prompt-resultat: </p> <!---manglet id og slutt p-tag -->
+<p id="array">Array: </p>
+
+<script>
+// 1. En variabel
+   let navn = "Hei, jeg har klart det!";   // feil skrevet let (lett) 
+// Viser variabelen på nettsiden
+document.getElementById("variable").innerHTML += `<span class="result">${navn}</span>`;
+
+// 2. En utregning av to tall
+let tall1 = 10;     // kan ikke skrive ti her, må skrive 10 
+let tall2 = 20;
+let sum = tall1 + tall2; // Legger sammen tallene
+// Viser utregningen på nettsiden
+document.getElementById("calculation").innerHTML += `<span class="result">${tall1} + ${tall2} = ${sum}</span>`;
+
+// 3. En prompt
+let brukerInput = prompt("Hva er favorittfargen din?");  //skrive feil av promt (promp)
+// Viser brukerens input på nettsiden
+document.getElementById("promptResult").innerHTML += `<span class="result">Favorittfargen din er: ${brukerInput}</span>`;
+
+// 4. En funksjon
+function multipliser(a, b) {  // må skrive funksjon på engelsk  
+    return a * b; // Multipliserer to tall
+   }
+let produkt = multipliser(5, 3); // Kaller funksjonen med tallene 5 og 3
+// Viser resultatet av funksjonen på nettsiden
+document.getElementById("calculation").innerHTML += `<br>5 * 3 = <span class="result">${produkt}</span>`;
+
+// 5. Et array
+let frukter = ["Eple", "Banan", "Appelsin", "Druer"];
+// Viser arrayet på nettsiden)
+   document.getElementById("array").innerHTML += `<span class="result">${frukter.join(", ")}</span>`;  //feil skrevet document (dokument)  //var trykket enter mitt i koden
+</script>  <!--manglet / i slutt tag-->
+</body>
+</html>

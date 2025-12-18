@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gambling Page</title>
+
+    <link rel="stylesheet" href="css/scamdesign.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-flex">
+            <h1>Irish Travels</h1>
+            <nav>
+                <ul class="header-buttons">
+                    <li><a href="index.html" class="button-link">Home</a></li>
+                    <li><a href="html/about.html" class="button-link">About</a></li>
+                    <li><a href="html/blog.html" class="button-link">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>  							<!-- Header section with title and navigation menu -->
+
+    <br>
+
+    <div id="typeChoice">
+        <label>color or number</label><br>
+        <button id="color">color</button>
+        <button id="number">number</button>
+    </div>
+    <div id="colorChoice" style="display: none;">
+        <label>Which color?</label><br>
+        <button id="redChoice">red</button>
+        <button id="blackChoice">black</button><br><br>
+        <label>How much money ya betting?</label><br>
+        <input type="number" id="colorBetAmount" min="1" value="1"><br><br>
+        <button id="playCol">Play</button>
+    </div>
+
+    <div id="colorResult" style="display: none";>
+        <h2>Your Result:</h2>
+        <p id="resultText"></p>
+    </div>
+
+        <script src="javascript/roulette.js"></script>
+</body>
+</html>
