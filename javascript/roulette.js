@@ -22,7 +22,6 @@ playGameColor.addEventListener('click', () => {
 });
 
 
-
 // roulette game functions
 
 function getRandomItem(arr) {
@@ -44,6 +43,7 @@ winningCol = 'black';
 } else if (isred) {
 winningCol = 'red';
 }
+
 
 console.log(`${winningNum} | ${winningCol}`);
 
