@@ -1,82 +1,111 @@
-// <div> container variables
-const typeChoiceBox = document.getElementById('typeChoice')
-const colorChoiceBox = document.getElementById('colorChoice')
+// Containers
+const walletDisplay = document.getElementById('walletDisplay');
+const typeChoiceBox = document.getElementById('typeChoice');
+const colorChoiceBox = document.getElementById('colorChoice');
+const numberChoiceBox = document.getElementById('numberChoice');
+const resultBox = document.getElementById('resultBox');
 const resultText = document.getElementById('resultText');
 
-// buttons
+// Buttons
 const typeColor = document.getElementById('color');
 const typeNumber = document.getElementById('number');
-const playGameColor = document.getElementById('playCol');
+const redBtn = document.getElementById('redChoice');
+const blackBtn = document.getElementById('blackChoice');
+const playCol = document.getElementById('playCol');
+const playNum = document.getElementById('playNum');
+const playAgainBtn = document.getElementById('playAgain');
 
-// button events
-typeColor.addEventListener('click', () => {
-    typeChoiceBox.style.display = 'none';
-    colorChoiceBox.style.display = 'block';
-});
-playGameColor.addEventListener('click', () => {
-    colorChoiceBox.style.display = 'none';
-    colorResult.style.display = 'block';
-    /* const chosenCol = 'black';
-    gambleCol(chosenCol) */
+// Wallet
+let wallet = 50;
 
-});
-
-
-// roulette game functions
-
-function getRandomItem(arr) {
-    return arr[Math.floor(Math.random() * arr.length)];
-}
-
-const roulettetable = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36];
+// Data
+const rouletteTable = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36];
 const black = [1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35];
 const red = [2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36];
 
-function gambleCol(yourCol) {
+// State
+let chosenColor = null;         // No selected color at start
 
-const winningNum = getRandomItem(roulettetable);
-const isblack = black.find(number => number === winningNum);
-const isred = red.find(number => number === winningNum);
-let winningCol;
-if (isblack) {
-winningCol = 'black';
-} else if (isred) {
-winningCol = 'red';
+// Functions
+function updateWallet() {       // Update wallet display
+    walletDisplay.textContent = `Wallet: $${wallet}`;
 }
 
-
-console.log(`${winningNum} | ${winningCol}`);
-
-//wait what
-if (yourCol == winningCol) {
-    const resultText = document.getElementById('resultText');
-    resultText.innerHTML = 'wow, you win';
-} else {
-    console.log('wow, you SUCK!!');
+function spinRoulette() {       // Simulate a roulette spin
+    const number = rouletteTable[Math.floor(Math.random() * rouletteTable.length)];
+    const color = black.includes(number) ? 'black' : 'red';
+    return { number, color };
 }
 
-
+function resetUI() {            // Reset UI to initial state
+    resultBox.style.display = 'none';
+    colorChoiceBox.style.display = 'none';
+    numberChoiceBox.style.display = 'none';
+    typeChoiceBox.style.display = 'block';
 }
 
-function gambleNum(yourNum) {
+// Mode selection
+typeColor.onclick = () => {     // Gamble on color
+    typeChoiceBox.style.display = 'none';       // Hide type choice box     (none = hide)
+    colorChoiceBox.style.display = 'block';     // Show color choice box    (block = show)
+};
 
-const winningNum = getRandomItem(roulettetable);
-const isblack = black.find(number => number === winningNum);
-const isred = red.find(number => number === winningNum);
-let winningCol;
-if (isblack) {
-winningCol = 'black';
-} else if (isred) {
-winningCol = 'red';
-}
+typeNumber.onclick = () => {    // Gamble on number
+    typeChoiceBox.style.display = 'none';
+    numberChoiceBox.style.display = 'block';
+};
 
-console.log(`${winningNum} | ${winningCol}`);
+// Color choice
+redBtn.onclick = () => chosenColor = 'red';
+blackBtn.onclick = () => chosenColor = 'black';
 
-if (yourNum == winningNum) {
-    console.log('wow, you win');
-} else {
-    console.log('wow, you SUCK!!');
-}
+// Play color game
+playCol.onclick = () => {
+    const bet = Number(document.getElementById('colorBetAmount').value);
+    const spin = spinRoulette();
 
+    wallet -= bet;          // Remove initial bet
 
-}
+    let message;
+    if (spin.color === chosenColor) {
+        wallet += bet * 2;      // Add winnings
+        message = `🎉 You won! The ball landed on ${spin.number} (${spin.color}). You won $${bet * 2}.`;
+    } else {
+        message = `❌ You lost! The ball landed on ${spin.number} (${spin.color}). You lost $${bet}.`;
+    }
+
+    updateWallet();
+    colorChoiceBox.style.display = 'none';
+    resultBox.style.display = 'block';
+    resultText.textContent = message;
+};
+
+// Play number game
+playNum.onclick = () => {
+    const bet = Number(document.getElementById('numberBetAmount').value);
+    const chosenNumber = Number(document.getElementById('numberPick').value);
+    const spin = spinRoulette();
+
+    wallet -= bet;          // Remove initial bet
+
+    let message;
+    if (spin.number === chosenNumber) {
+        wallet += bet * 10;     // Add winnings
+        message = `🎉 JACKPOT! It landed on ${spin.number} (${spin.color}). You won $${bet * 10}!`;
+    } else {
+        message = `❌ It landed on ${spin.number} (${spin.color}). You lost $${bet}.`;
+    }
+
+    updateWallet();
+    numberChoiceBox.style.display = 'none';
+    resultBox.style.display = 'block';
+    resultText.textContent = message;
+};
+
+// Play again
+playAgainBtn.onclick = () => {
+    resetUI();
+};
+
+// Initial setup
+updateWallet();

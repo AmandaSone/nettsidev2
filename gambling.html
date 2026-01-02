@@ -10,9 +10,9 @@
 </head>
 
 <body>
-    <header>
+    <header>    <!-- Header section with title and navigation menu -->
         <div class="header-flex">
-            <h1>Irish Travels</h1>
+            <h1>Roulette all you want</h1>
             <nav>
                 <ul class="header-buttons">
                     <li><a href="index.html" class="button-link">Home</a></li>
@@ -21,29 +21,56 @@
                 </ul>
             </nav>
         </div>
-    </header>  							<!-- Header section with title and navigation menu -->
+    </header>  							
 
     <br>
 
+    <!-- WALLET DISPLAY -->
+    <h2 id="walletDisplay">Wallet: $50</h2>
+
+    <!-- TYPE SELECTION -->
     <div id="typeChoice">
-        <label>color or number</label><br>
-        <button id="color">color</button>
-        <button id="number">number</button>
+        <label>Choose betting type</label><br><br>
+        <button id="color">Color</button>
+        <button id="number">Number</button>
     </div>
-    <div id="colorChoice" style="display: none;">
-        <label>Which color?</label><br>
-        <button id="redChoice">red</button>
-        <button id="blackChoice">black</button><br><br>
-        <label>How much money ya betting?</label><br>
+
+    <!-- COLOR BETTING -->
+    <div id="colorChoice" style="display:none;">
+        <h2>Color Bet</h2>
+
+        <label>Choose a color</label><br>
+        <button id="redChoice">Red</button>
+        <button id="blackChoice">Black</button><br><br>
+
+        <label>Bet amount</label><br>
         <input type="number" id="colorBetAmount" min="1" value="1"><br><br>
+
         <button id="playCol">Play</button>
     </div>
 
-    <div id="colorResult" style="display: none";>
-        <h2>Your Result:</h2>
-        <p id="resultText"></p>
+    <!-- NUMBER BETTING -->
+    <div id="numberChoice" style="display:none;">
+        <h2>Number Bet</h2>
+
+        <label>Pick a number (1–36)</label><br>
+        <input type="number" id="numberPick" min="1" max="36"><br><br>
+
+        <label>Bet amount</label><br>
+        <input type="number" id="numberBetAmount" min="1" value="1"><br><br>
+
+        <button id="playNum">Play</button>
     </div>
 
-        <script src="javascript/roulette.js"></script>
+    <!-- RESULT -->
+    <div id="resultBox" style="display:none;">
+        <h2>Result</h2>
+        <p id="resultText"></p>
+        <button id="playAgain">Play Again</button>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="javascript/roulette.js"></script>
+    
 </body>
 </html>
