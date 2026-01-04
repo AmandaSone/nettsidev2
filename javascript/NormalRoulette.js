@@ -96,14 +96,13 @@ playCol.onclick = () => {
     if (!canPlaceBet(bet)) return;
     const spin = spinRoulette();
 
-    wallet -= bet;          // Remove initial bet
-
     let message;
     if (spin.color === chosenColor) {
-        wallet += bet * 2;      // Add winnings
+        wallet += bet;      // Add winnings
         resultText.style.color = 'green';
         message = `You won! The ball landed on ${spin.number} ${spin.color}. You won $${bet * 2}.`;
     } else {
+        wallet -= bet;          // Remove initial bet
         resultText.style.color = 'red';
         message = `You lost! The ball landed on ${spin.number} ${spin.color}. You lost $${bet}.`;
     }
@@ -124,14 +123,13 @@ playNum.onclick = () => {
     const chosenNumber = Number(document.getElementById('numberPick').value);
     const spin = spinRoulette();
 
-    wallet -= bet;          // Remove initial bet
-
     let message;
     if (spin.number === chosenNumber) {
-        wallet += bet * 10;     // Add winnings
+        wallet += bet * 35;     // Add winnings
         resultText.style.color = 'green';
-        message = `JACKPOT! It landed on ${spin.number} ${spin.color}. You won $${bet * 10}!`;
+        message = `JACKPOT! It landed on ${spin.number} ${spin.color}. You won $${bet * 35}!`;
     } else {
+        wallet -= bet;          // Remove initial bet
         resultText.style.color = 'red';
         message = `It landed on ${spin.number} ${spin.color}. You lost $${bet}.`;
     }

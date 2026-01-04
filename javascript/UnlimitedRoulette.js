@@ -100,14 +100,13 @@ playNum.onclick = () => {
     const chosenNumber = Number(document.getElementById('numberPick').value);
     const spin = spinRoulette();
 
-    profits -= bet;          // Remove initial bet
-
     let message;
     if (spin.number === chosenNumber) {
-        profits += bet * 10;     // Add winnings
+        profits += bet * 35;     // Add winnings
         resultText.style.color = 'green';
-        message = `JACKPOT! It landed on ${spin.number} ${spin.color}. You won $${bet * 10}!`;
+        message = `JACKPOT! It landed on ${spin.number} ${spin.color}. You won $${bet * 35}!`;
     } else {
+        profits -= bet;          // Remove initial bet
         resultText.style.color = 'red';
         message = `It landed on ${spin.number} ${spin.color}. You lost $${bet}.`;
     }
