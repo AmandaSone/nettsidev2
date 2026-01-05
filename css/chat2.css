@@ -1,5 +1,5 @@
 /* =========================
-   Global styles
+    Main Styles
 ========================= */
 
 * {
@@ -7,15 +7,35 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+html, body{
+    height: 100%;
+    margin: 0;
+}
+
 body {
+    display: flex;
+    flex-direction: column;
     margin: 0;
     background: radial-gradient(circle at top, #1b1b1b, #0a0a0a);
     color: #eaeaea;
     text-align: center;
 }
 
+#pageContent {
+    flex: 1;        /* pushes footer to bottom */
+}
+
+footer {
+    background: #111;
+    border-top: 2px solid #333;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    color: #aaa;
+    text-align: center;
+}
+
 /* =========================
-   Header
+    Header
 ========================= */
 
 header {
@@ -39,8 +59,9 @@ header h1 {
 /* Navigation */
 
 .header-buttons {
-    list-style: none; /* remove bullets */
+    list-style: none;       /* remove bullets */
     display: flex;
+    flex-wrap: nowrap; 
     gap: 15px;
     padding: 0;
     margin: 0;
@@ -51,29 +72,31 @@ header h1 {
     color: #eaeaea;
     padding: 10px 16px;
     border-radius: 6px;
-    background: #222;        /* darker but distinct from header */
-    border: 1px solid #555;  /* adds contrast */
+    background: #222;        
+    border: 1px solid #f5c542;  /* adds contrast */
     transition: all 0.2s ease;
     font-weight: bold;
+    white-space: nowrap;
 }
 
 .button-link:hover {
-    background: #4caf50;  /* highlight on hover */
+    background: #f5c542;  /* highlight on hover */
     color: #0f0f0f;
 }
 
 /* =========================
-   Wallet / Profit display
+    Wallet / Profits display
 ========================= */
 
-#walletDisplay {
+#walletDisplay,
+#profitsDisplay {
     margin-top: 30px;
     font-size: 1.6rem;
-    color: #4caf50;
+    color: #38eb3e;
 }
 
 /* =========================
-   Main game boxes
+    Main game boxes
 ========================= */
 
 #typeChoice,
@@ -96,7 +119,7 @@ h2 {
 }
 
 /* =========================
-   Buttons
+    Buttons
 ========================= */
 
 button {
@@ -108,11 +131,13 @@ button {
     border-radius: 6px;
     font-size: 1rem;
     cursor: pointer;
-    transition: background 0.2s ease, transform 0.1s ease;
+    border: 1px solid #eaeaea;  /* add contrast */
+    transition: all 0.2s ease;
 }
 
 button:hover {
-    background: #555;  /* more contrast */
+    background: #555;
+    transform: scale(1.2);
 }
 
 button:active {
@@ -122,27 +147,29 @@ button:active {
 /* Special buttons */
 
 #redChoice {
-    background: #b71c1c;       /* brighter red */
+    background: #841717;
+    border: 1px solid #481414;
     color: #fff;
 }
 
 #redChoice:hover {
-    background: #e53935;
+    background: #e61515;
 }
 
 #blackChoice {
-    background: #222;           /* distinguish from background */
+    background: #111111;
     color: #fff;
 }
 
 #blackChoice:hover {
-    background: #555;
+    background: #444444;
 }
 
 #playCol,
 #playNum,
 #playAgain {
-    background: #4caf50;
+    background: #2fa633;
+    border: 1px solid #164117;
     color: #0f0f0f;
     font-weight: bold;
 }
@@ -150,11 +177,11 @@ button:active {
 #playCol:hover,
 #playNum:hover,
 #playAgain:hover {
-    background: #66bb6a;
+    background: #38eb3e;
 }
 
 /* =========================
-   Inputs
+    Inputs
 ========================= */
 
 input[type="number"] {
@@ -170,7 +197,7 @@ input[type="number"] {
 }
 
 /* =========================
-   Result box
+    Result box
 ========================= */
 
 #resultText {
@@ -185,7 +212,7 @@ input[type="number"] {
 }
 
 /* =========================
-   Utility
+    Utility
 ========================= */
 
 label {
@@ -198,7 +225,7 @@ br {
 }
 
 /* =========================
-   How To Page Lists
+    How To Page Lists
 ========================= */
 
 ul, ol {
@@ -212,32 +239,30 @@ li {
     padding-left: 0;
 }
 
-/* Optional: add a small arrow if you like */
-li::before {
-    content: "→ "; 
-    color: #f5c542;
-}
-
 /* =========================
-   How To Page Container
+    How To Page Container
 ========================= */
 
 #howToContainer {
-    background: #1a1a1a;           /* dark card background */
-    border: 1px solid #333;        /* subtle border */
+    background: #1a1a1a;           
+    border: 1px solid #333;        
     border-radius: 12px;
     padding: 30px 25px;
     max-width: 700px;
     margin: 40px auto;
-    box-shadow: 0 0 30px rgba(0,0,0,0.7);
+    box-shadow: 0 0 30px #000000;
     text-align: left;
     color: #e0e0e0;
 }
 
-/* Headings inside card */
-#howToContainer h1,
+/* Headings inside container*/
 #howToContainer h2 {
     color: #f5c542;
+    margin-bottom: 15px;
+}
+
+#howToContainer h3 {
+    color: #ffe08b;
     margin-bottom: 15px;
 }
 
@@ -261,25 +286,6 @@ li::before {
     position: relative;
 }
 
-/* Optional arrow before each list item */
-#howToContainer li::before {
-    content: "→";
-    color: #f5c542;
-    margin-right: 8px;
-    position: absolute;
-    left: -20px;  /* adjust spacing */
-}
-
-/* Links inside How To card */
-#howToContainer a {
-    color: #4caf50;
-    text-decoration: none;
-}
-
-#howToContainer a:hover {
-    text-decoration: underline;
-}
-
 /* Responsive for smaller screens */
 @media (max-width: 500px) {
     #howToContainer {
@@ -289,5 +295,27 @@ li::before {
 
     #howToContainer li::before {
         left: -15px;
+    }
+}
+
+@media (max-width: 800px) {
+    .header-flex {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .header-buttons {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        row-gap: 4px;
+    }
+
+    .button-link {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 14px 7px;
+        font-size: 0.95rem;
     }
 }

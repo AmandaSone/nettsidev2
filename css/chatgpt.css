@@ -1,5 +1,5 @@
 /* =========================
-   Global styles
+    Global styles
 ========================= */
 
 * {
@@ -9,13 +9,13 @@
 
 body {
     margin: 0;
-    background: radial-gradient(circle at top, #1b1b1b, #0f0f0f);
+    background: radial-gradient(circle at top, #1e1e1e, #0f0f0f);
     color: #eaeaea;
     text-align: center;
 }
 
 /* =========================
-   Header
+    Header
 ========================= */
 
 header {
@@ -60,7 +60,7 @@ header h1 {
 }
 
 /* =========================
-   Wallet / Profit display
+    Wallet / Profit display
 ========================= */
 
 #walletDisplay {
@@ -70,7 +70,7 @@ header h1 {
 }
 
 /* =========================
-   Main game boxes
+    Main game boxes
 ========================= */
 
 #typeChoice,
@@ -93,7 +93,7 @@ h2 {
 }
 
 /* =========================
-   Buttons
+    Buttons
 ========================= */
 
 button {
@@ -127,7 +127,7 @@ button:active {
 }
 
 #blackChoice {
-    background: #111;
+    background: #0c0c0c;
 }
 
 #blackChoice:hover {
@@ -149,7 +149,7 @@ button:active {
 }
 
 /* =========================
-   Inputs
+    Inputs
 ========================= */
 
 input[type="number"] {
@@ -165,7 +165,7 @@ input[type="number"] {
 }
 
 /* =========================
-   Result box
+    Result box
 ========================= */
 
 #resultText {
@@ -180,7 +180,7 @@ input[type="number"] {
 }
 
 /* =========================
-   Utility
+    Utility
 ========================= */
 
 label {
