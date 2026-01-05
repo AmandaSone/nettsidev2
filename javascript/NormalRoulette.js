@@ -62,6 +62,7 @@ function checkGameOver() {      // Check if wallet is empty
 function canPlaceBet(bet) {     // Check if bet is valid
     if (bet > wallet) {
         resultText.textContent = "You don't have enough money in your wallet for that bet.";
+        resultText.style.color = 'red';
         resultBox.style.display = 'block';
         playAgainBtn.style.display = 'none';
         gameOverText.style.display = 'none';
