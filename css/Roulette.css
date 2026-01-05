@@ -16,7 +16,7 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0;
-    background: radial-gradient(circle at top, #1b1b1b, #0a0a0a);
+    background: radial-gradient(circle at top, #252525, #0a0a0a);
     color: #eaeaea;
     text-align: center;
 }
@@ -61,7 +61,7 @@ header h1 {
 .header-buttons {
     list-style: none;       /* remove bullets */
     display: flex;
-    flex-wrap: nowrap; 
+    flex-wrap: nowrap;
     gap: 15px;
     padding: 0;
     margin: 0;
@@ -110,7 +110,7 @@ header h1 {
     max-width: 420px;
     margin: 25px auto;
     padding: 25px;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 25px #000000;
 }
 
 h2 {
@@ -147,7 +147,7 @@ button:active {
 /* Special buttons */
 
 #redChoice {
-    background: #841717;
+    background: #a11717;
     border: 1px solid #481414;
     color: #fff;
 }
@@ -286,7 +286,144 @@ li {
     position: relative;
 }
 
-/* Responsive for smaller screens */
+/* =========================
+    Light Mode
+========================= */
+
+body.light-mode {
+    background: radial-gradient(circle at top, #fcfcfb, #f2e6d8);
+    color: #111;
+}
+
+/* Header */
+body.light-mode header {
+    background: #f1e4d5;
+    border-bottom: 2px solid #e2c4a5;
+}
+
+body.light-mode header h1 {
+    color: #40bac1;
+}
+
+body.light-mode .button-link {
+    background: #f7efe5;        
+    border: 1px solid #40bac1;
+    color: #000;
+}
+
+body.light-mode .button-link:hover {
+    background: #40bac1;
+    color: #f7efe5;
+}
+
+/* Main game boxes */
+body.light-mode #typeChoice,
+body.light-mode #colorChoice,
+body.light-mode #numberChoice,
+body.light-mode #resultBox,
+body.light-mode #howToContainer {
+    background: #f1e4d5;
+    border: 1px solid #e2c4a5;
+    box-shadow: 0 0 15px #6e5a46;
+}
+
+body.light-mode h2 {
+    color: #59ced4;
+}
+
+/* Buttons */
+body.light-mode button {
+    background: #ead2b9;
+    color: #111;
+    border: 1px solid #b89471;
+}
+
+body.light-mode button:hover {
+    background: #e2c4a5;
+}
+
+/* Special buttons */
+body.light-mode #redChoice {
+    background: #f44646;
+    border: 1px solid #ee2727;
+    color: #111;
+}
+
+body.light-mode #redChoice:hover {
+    background: #de1919;
+}
+
+body.light-mode #blackChoice {
+    background: #2f2f2f;
+    border: 1px solid #1d1d1d;
+    color: #fff;
+}
+
+body.light-mode #blackChoice:hover {
+    background: #4e4e4e;
+}
+
+/* Play buttons */
+body.light-mode #playCol,
+body.light-mode #playNum,
+body.light-mode #playAgain {
+    background: #b45ee2;
+    border: 1px solid #852cb5;
+    color: #f7efe5;
+}
+
+body.light-mode #playCol:hover,
+body.light-mode #playNum:hover,
+body.light-mode #playAgain:hover {
+    background: #852cb5;
+}
+
+/* Wallet / Profits display */
+body.light-mode #walletDisplay,
+body.light-mode #profitsDisplay {
+    color: #b45ee2;
+}
+
+/* Labels */
+body.light-mode label {
+    color: #111;
+}
+
+/* Inputs */
+body.light-mode input[type="number"] {
+    background: #fff;
+    color: #111;
+    border: 1px solid #ad8d6c;
+}
+
+/* How To Page Container Text */
+body.light-mode #howToContainer p {
+    color: #111;
+}
+
+body.light-mode #howToContainer li {
+    color: #111;
+}
+
+body.light-mode #howToContainer h2 {
+    color: #40bac1;
+}
+
+body.light-mode #howToContainer h3 {
+    color: #59ced4;
+}
+
+/* Footer */
+body.light-mode footer {
+    background: #f1e4d5;
+    color: #603f20;
+    border-top: 2px solid #e2c4a5;
+}
+
+/* =========================
+    Responsive Design
+========================= */
+
 @media (max-width: 500px) {
     #howToContainer {
         padding: 20px 15px;
@@ -298,6 +435,7 @@ li {
     }
 }
 
+/* Responsive buttons and header */
 @media (max-width: 800px) {
     .header-flex {
         flex-direction: column;
